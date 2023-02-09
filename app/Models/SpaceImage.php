@@ -4,12 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SpaceAmenity extends Model {
-
-    protected $table = 'space_amenities';
-
-    public function space() {
+class SpaceImage extends Model
+{
+    protected $table="space_images";
+    
+    public function space(){
         return $this->belongsTo(Space::class, 'space_id');
     }
-        
 }

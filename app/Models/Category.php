@@ -4,16 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tickets extends Model {
+class Category extends Model {
 
-    protected $table = "tickets";    
+    protected $table = "categories";
 
     public function space() {
         return $this->belongsTo(Space::class, 'space_id');
     }
-
-    public function user() {
-        return $this->belongsTo(User::class, 'user_id');
+    
+    public function amenities() {
+        return $this->belongsToMany(Amenity::class, 'amenity_id');
     }
 
 }

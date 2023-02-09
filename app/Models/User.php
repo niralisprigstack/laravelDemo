@@ -2,15 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\Authenticatable;
-use Illuminate\Auth\Authenticatable as AuthenticableTrait;
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Cashier\Billable;
 
-class User extends Model implements Authenticatable {
-
-    use Billable;
-    use AuthenticableTrait;
+class User extends Model{    
 
     protected $softDelete = true;
     protected $fillable = ['name', 'email', 'password'];

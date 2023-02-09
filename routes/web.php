@@ -18,4 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/space-details/{id}', [SpaceController::class,'show']);
+Route::get('/space-details/{id}/{key?}/{key2?}', [SpaceController::class,'show']);
+Route::get('/ticket-details/{id}', [TicketController::class,'show']);

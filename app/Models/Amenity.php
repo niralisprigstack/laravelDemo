@@ -9,7 +9,11 @@ class Amenity extends Model {
     protected $table = "amenities";
 
     public function spaces() {
-        return $this->belongsToMany('App\Models\Space', 'space_amenities');
+        return $this->belongsToMany(Space::class, 'space_amenities');
+    }
+    
+    public function category() {
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
 }

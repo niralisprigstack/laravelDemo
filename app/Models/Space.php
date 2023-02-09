@@ -23,5 +23,8 @@ class Space extends Model {
     public function spaceplan() {
         return $this->belongsTo('App\SpacePlan', 'plan_id');
     }
+      public function city() {
+        return $this->belongsTo('App\City');
+    }
 
 }

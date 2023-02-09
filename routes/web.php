@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/space-details/{id}', [SpaceController::class,'show']);

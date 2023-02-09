@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Actions\Spaces\FetchSpaceDetails;
 
 class SpaceController extends Controller
 {
-    
+    public function show($id) {
+        $spaceId = $id;
+        $fetchSpaceDetails = FetchSpaceDetails::execute($spaceId);
+        dd($fetchSpaceDetails);
+    }
 }

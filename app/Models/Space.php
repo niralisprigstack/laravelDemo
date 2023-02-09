@@ -13,15 +13,15 @@ class Space extends Model {
     protected $fillable = ['discount'];
 
     public function user() {
-        return $this->belongsTo('App\User', 'user_id');
+        return $this->belongsTo('App\Models\User', 'user_id');
     }
 
     public function amenities() {
-        return $this->belongsToMany('App\Amenity', 'space_amenities');
+        return $this->belongsToMany('App\Models\Amenity', 'space_amenities');
     }
 
     public function spaceplan() {
-        return $this->belongsTo('App\SpacePlan', 'plan_id');
+        return $this->belongsTo('App\Models\SpacePlan', 'plan_id');
     }
 
 }

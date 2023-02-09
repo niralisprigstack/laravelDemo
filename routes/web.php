@@ -1,5 +1,7 @@
 <?php
-
+use App\Http\Controllers\SpaceController;
+use App\Http\Controllers\TicketController;
+use App\Http\Controllers\AmenityController;
 use Illuminate\Support\Facades\Route;
 
 /*

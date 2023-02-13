@@ -20,3 +20,5 @@ Route::get('/', function () {
 });
  Route::get('/oneToOne/{id?}', [SpaceController::class, 'space']);
 Route::get('/space-details/{id}', [SpaceController::class,'show']);
+Route::get('/space-details/{id}/{key?}/{key2?}', [SpaceController::class,'show']);
+Route::get('/ticket-details/{id}', [TicketController::class,'show']);

@@ -19,9 +19,12 @@ class SpaceController extends Controller {
     }
 
 
-    public function show($id) {
+    
+
+    public function show($id, $key = "", $key2 = "") {
         $spaceId = $id;
-        $fetchSpaceDetails = FetchSpaceDetails::execute($spaceId);
+        $fetchSpaceDetails = FetchSpaceDetails::execute($spaceId, $key, $key2);
+        
         dd($fetchSpaceDetails);
     }
 }

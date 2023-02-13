@@ -25,6 +25,19 @@ class Space extends Model {
     }
       public function city() {
         return $this->belongsTo(City::class,'city_id');
+    
+    }
+    
+    public function spaceImages() {
+        return $this->hasMany(SpaceImage::class)->orderByDesc('isFeatured');
+    }
+    
+    public function tickets() {
+        return $this->belongsToMany(Tickets::class, 'tickets');
+    }
+    
+    public function spaceoccupation() {
+        return $this->hasMany(SpaceOccupation::class, 'space_id');
     }
 
 }

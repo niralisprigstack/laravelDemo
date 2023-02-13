@@ -11,5 +11,9 @@ class Amenity extends Model {
     public function spaces() {
         return $this->belongsToMany(Space::class, 'space_amenities');
     }
+    
+    public function category() {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
 
 }

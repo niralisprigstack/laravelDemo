@@ -9,11 +9,11 @@ class Tickets extends Model {
     protected $table = "tickets";    
 
     public function space() {
-        return $this->belongsTo('App\Space', 'space_id');
+        return $this->belongsTo(Space::class, 'space_id');
     }
 
     public function user() {
-        return $this->belongsTo('App\User', 'user_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
 }

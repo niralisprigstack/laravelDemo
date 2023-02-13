@@ -2,25 +2,23 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\Authenticatable;
-use Illuminate\Auth\Authenticatable as AuthenticableTrait;
+
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Cashier\Billable;
 
-class User extends Model implements Authenticatable {
 
-    use Billable;
-    use AuthenticableTrait;
+class User extends Model  {
+
+   
 
     protected $softDelete = true;
     protected $fillable = ['name', 'email', 'password'];
 
     public function spaces() {
-        return $this->hasMany('App\Space');
+        return $this->hasMany(Space::class,'space_id');
     }
     
     public function tickets() {
-        return $this->hasMany('App\Tickets', 'user_id')->orderBy('id', 'desc');
+        return $this->hasMany(Tickets::class, 'user_id')->orderBy('id', 'desc');
     }
 
 }

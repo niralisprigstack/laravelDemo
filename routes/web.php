@@ -19,3 +19,4 @@ Route::get('/', function () {
     return view('welcome');
 });
  Route::get('/oneToOne/{id?}', [SpaceController::class, 'space']);
+Route::get('/space-details/{id}', [SpaceController::class,'show']);

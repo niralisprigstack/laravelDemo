@@ -15,16 +15,15 @@ class ManyToOneRel
     public static function execute()
     {
         try {
-        return Tickets::with([
-            'space:id,user_id,space_name' ,
-            
-            'space.user' =>function ($query) {
-                $query->select('id','first_name');
-                // ->where('id','tickets.user_id');
-            },
-        ])->where('space_id', 178)->select('id', 'space_id', 'user_id')->get();
+            $spaceids = Space::where('is_active', '1')->get(['id'])->pluck('id');
+            return Tickets::with([
+                'space:id,user_id,space_name',
+                'space.user' => function ($query) {
+                    $query->select('id', 'first_name');                    
+                },
+            ])->whereIn('space_id', $spaceids)->select('id', 'space_id', 'user_id')->get();            
         } catch (Exception $e) {
-        return $e->getMessage();
-      }
+            return $e->getMessage();
+        }
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Actions\Spaces\oneToOne;
+use App\Actions\Spaces\OneToOne;
 use App\Actions\Spaces\FetchSpaceDetails;
 
 class SpaceController extends Controller {

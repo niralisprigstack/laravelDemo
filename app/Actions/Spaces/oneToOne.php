@@ -13,7 +13,10 @@ class OneToOne
 {
     public static function execute($id)
     {
-        $space=Space::with('user','spaceplan','city')->findOrFail($id);
-        return $space;
+        try {
+        return Space::with('user','spaceplan','city')->findOrFail($id);
+        } catch (Exception $e) {
+        return $e->getMessage();
+      }
     }
 }

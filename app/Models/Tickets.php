@@ -9,7 +9,7 @@ class Tickets extends Model {
     protected $table = "tickets";    
 
     public function space() {
-        return $this->belongsTo(Space::class, 'space_id');
+        return $this->belongsTo(Space::class,'space_id','id');
     }
 
     public function user() {

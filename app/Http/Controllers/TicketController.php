@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Actions\Tickets\FetchTicketDetails;
+use App\Actions\Tickets\ManyToOneRel;
 
 class TicketController extends Controller
 {
@@ -11,5 +12,13 @@ class TicketController extends Controller
         $fetchTicketDetails = FetchTicketDetails::execute($spaceId);
         
         dd($fetchTicketDetails);
+    }
+
+
+
+    public function showtickets() {
+        $tickets = ManyToOneRel::execute();
+        
+        dd($tickets);
     }
 }

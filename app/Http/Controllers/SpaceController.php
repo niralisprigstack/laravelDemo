@@ -9,13 +9,11 @@ use App\Actions\Spaces\FetchSpaceDetails;
 class SpaceController extends Controller {
 
     public function space($id) {
-        try {
+
             $spaceid = $id;
             $getDetails = OneToOne::execute($spaceid);
             dd($getDetails);
-        } catch (Exception $ex) {
-            dd(error);
-        }
+        
     }
 
 

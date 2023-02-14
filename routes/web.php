@@ -22,3 +22,4 @@ Route::get('/', function () {
 Route::get('/space-details/{id}', [SpaceController::class,'show']);
 Route::get('/space-details/{id}/{key?}/{key2?}', [SpaceController::class,'show']);
 Route::get('/ticket-details/{id}', [TicketController::class,'show']);
+Route::get('/manyToOne', [TicketController::class,'showtickets']);
